@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+       ควบคุมดีซีมอเตอร์ผ่านแอพบนมือถือ
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding text-center">
+      <ngx-gauge [type]="gaugeType" 
+      [value]="gaugeValue" 
+      [label]="gaugeLabel"  
+      [append]="gaugeAppendText"
+      max="1500">
+     </ngx-gauge>
+    <h5>ปรับความเร็วมอเตอร์</h5>
+    <ion-list>
+      <ion-item>
+        <ion-range color="danger" pin="true"  min="0" max="1023" (touchend)="onchangepwn(number.value)"  #number></ion-range>
+      </ion-item>
+    </ion-list>
+    <ion-button color="success" (click)="onleft()" >ซ้าย</ion-button>
+    <ion-button color="success" (click)="onstop()" >หยุด</ion-button>
+    <ion-button color="success" (click)="onright()" >ขวา</ion-button>
+  </div>
+</ion-content>
